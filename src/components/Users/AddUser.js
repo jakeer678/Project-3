@@ -24,7 +24,7 @@ const AddUser = (props) => {
     const enteredUsername = inputUser.current.value;
     const enteredAge =  inputAge.current.value;
     const enterCollege = collegeName.current.value;
-    if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
+    if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0 ) {
       setError({
         title: 'Invalid input',
         message: 'Please enter a valid name and age (non-empty values).',
@@ -38,6 +38,13 @@ const AddUser = (props) => {
       });
       return;
     }
+if(enterCollege.trim().length===0) {
+  setError({
+    title: "Form is not valid"
+    message: "Please enter a college name"
+  })
+}
+
     props.onAddUser(enteredUsername, enteredAge,enterCollege);
     inputUser.current.value='';
     inputAge.current.value='';
