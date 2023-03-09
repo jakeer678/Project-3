@@ -40,7 +40,7 @@ const AddUser = (props) => {
     }
 if(enterCollege.trim().length===0) {
   setError({
-    title: "Form is not valid"
+    title: "Form is not valid",
     message: "Please enter a college name"
   })
 }
